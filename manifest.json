@@ -1,26 +1,30 @@
 {
-  "name": "Getting Started Example",
+  "name": "Github Now",
   "version": "1.0",
-  "description": "Build an Extension!",
-  "permissions": ["declarativeContent", "storage"],
+  "description": "Access GitHub anywhere you are.",
+  "permissions": ["declarativeContent", "storage", "activeTab", "tabs", "<all_urls>"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },
+  "content_scripts": [{
+    "matches": ["https://*"],
+    "js": ["popup.js"]
+  }],
   "page_action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "images/xbox.png",
-      "32": "images/xbox.png",
-      "48": "images/xbox.png",
-      "128": "images/xbox.png"
+      "16": "images/github-64.png",
+      "32": "images/github-64.png",
+      "48": "images/github-64.png",
+      "128": "images/github-64.png"
     }
   },
   "icons": {
-    "16": "images/xbox.png",
-    "32": "images/xbox.png",
-    "48": "images/xbox.png",
-    "128": "images/xbox.png"
+    "16": "images/github-64.png",
+    "32": "images/github-64.png",
+    "48": "images/github-64.png",
+    "128": "images/github-64.png"
   },
   "manifest_version": 2
 }
