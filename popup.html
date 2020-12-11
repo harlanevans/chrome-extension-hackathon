@@ -2,12 +2,63 @@
 <html>
 
 <head>
+  <style>
+    body {
+      width: 200px;
+      /* background: linear-gradient(200deg, rgba(70,70,70,1) 0%, rgba(255,255,255,1) 55%, rgba(70,70,70,1) 100%); */
+    }
+
+    #handle {
+      margin-bottom: 10px;
+      background-color: transparent;
+      border: 0;
+      border-bottom: 1px solid grey;
+      width: 120px;
+      margin-right: 23px;
+    }
+
+    #handle:focus {
+      outline: 0;
+    }
+
+    #handle:focus::placeholder {
+      transform: scale(0.8);
+      transition: all .5s;
+    }
+
+
+    ::placeholder {
+      color: rgb(56, 56, 56);
+    }
+
+    #heading {
+      color: rgb(56, 56, 56);
+    }
+
+    #login {
+      background-color: transparent;
+      border: 1px solid grey;
+      border-radius: 2px;
+      padding: 3px 7px;
+      color: rgb(56, 56, 56);
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      margin: 3px 0;
+    }
+
+    :visited {
+      color: black;
+    }
+  </style>
 </head>
 
 <body>
   <div class="login">
-    <h4 id="test">Please enter GitHub handle: </h4>
-    <input id="handle" type="text" value= "" placeholder="GitHub Handle">
+    <h4 id="heading">Please enter GitHub handle: </h4>
+    <input id="handle" type="text" value="" placeholder="GitHub Handle">
     <button id="login">Login</button>
     <div id="results"></div>
   </div>

@@ -1,25 +1,21 @@
 document.getElementById('login').onclick = function () {
   const handle = document.getElementById('handle').value;
   const results = document.getElementById('results');
-  const test = document.getElementById('test')
+  const heading = document.getElementById('heading')
 
   const URL = `https://api.github.com/users/${handle}/repos?per_page=100`;
-  // https://api.github.com/users/harlanevans/repos?per_page=100
-  //fetch(URL)
-  // chrome.tabs.create({url: 'https://www.google.com'})
-
 
   fetch(`https://api.github.com/users/${handle}`)
     .then(res => res.json())
-    .then(data => test.innerHTML = `Welcome, ${data.name}`)
-    .catch((error) => results.innerHTML = 'Error Mother Fucker');
+    .then(data => data.name ? heading.innerHTML = `Welcome, ${data.name}` : results.innerHTML = 'User not found!')
+    .catch((error) => results.innerHTML = 'User not found!');
 
   fetch(URL)
   .then((response) => response.json()) //Converting the response to a JSON object
     .then((data) => {
       // let isLoaded = false;
       // hello to username
-      
+    results.innerHTML = '';  
     for (const result of data) {
       const child = document.createElement('a');
       child.onclick = function() {
@@ -32,7 +28,7 @@ document.getElementById('login').onclick = function () {
     }
       // isLoaded = true
   })
-  .catch((error) => results.innerHTML = 'Error Mother Fucker');
+  .catch((error) => results.innerHTML = 'User not found!');
 }
 
 // {
