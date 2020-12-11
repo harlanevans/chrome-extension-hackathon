@@ -12,7 +12,13 @@
       margin-bottom: 10px;
       background-color: transparent;
       border: 0;
-      border-bottom: 1px solid grey;
+      border-bottom: 2px solid grey;
+      border-image: 
+    linear-gradient(
+      to right, 
+      #D200FF, 
+      #2C65FF, #5CC5FF
+    ) 1 1;
       width: 120px;
       margin-right: 23px;
     }
@@ -22,8 +28,8 @@
     }
 
     #handle:focus::placeholder {
-      transform: scale(0.8);
-      transition: all .5s;
+      transform: scale(0.8) translateX(-13%);
+      transition: transform .5s;
     }
 
 
@@ -37,9 +43,15 @@
 
     #login {
       background-color: transparent;
-      border: 1px solid grey;
+      border-width: 2px;
+      border-style: solid;
+      border-image: 
+    linear-gradient(
+      to right, 
+      #D200FF, 
+      #2C65FF, #5CC5FF
+    ) 1 1;
       border-radius: 2px;
-      padding: 3px 7px;
       color: rgb(56, 56, 56);
     }
 
